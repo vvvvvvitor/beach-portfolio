@@ -1,0 +1,343 @@
+:root {
+    --text-color-light: #2e211b;
+    --text-color-dark: #fcc9b9;
+
+    --background-color-light: #db5a6b;
+    --background-color-dark: #763568;
+
+    --background-complementary-light: #6d2b50;
+
+    --background-secondary-light: #fcc9b9;
+    --background-secondary-dark: #8d608c;
+
+    --confirmation-green: #14bc4b;
+    --decline-red: #ff5e46;
+}
+
+@font-face {
+    font-family: "Futura Medium";
+    src: url('../data/fonts/futura-medium.ttf');
+}
+
+@media (prefers-color-scheme: light) {
+    hr {
+        background-color: white;
+    }
+
+    .content {
+        color: var(--text-color-light);
+    }
+
+    .header {
+        box-shadow: 0px 0px 0px 300px rgba(255, 255, 255, 0.3) inset;
+    }
+
+    .socials {
+        background-color: var(--background-color-light);
+    }
+
+    .panel {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 1em;
+    }
+
+    .prices {
+        background-color: var(--background-color-light);
+        border-color: var(--background-complementary-light);
+        box-shadow: 0em 0em 1em 0.5em var(--background-color-dark);
+    }
+
+    .price-info {
+        background-color: var(--background-secondary-light);
+    }
+
+    .back-image {
+        background-image: url('../data/imgs/beachcomms-tiling-expanded-light.png');
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .content {
+        color: var(--text-color-dark);
+    }
+
+    .header {
+        box-shadow: 0px 0px 0px 300px rgba(0, 0, 0, 0.3) inset;
+    }
+
+    .socials {
+        background-color: var(--background-color-dark);
+    }
+
+    .panel {
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 1em;
+    }
+
+    .prices {
+        background-color: var(--background-color-dark);
+        border-color: var(--background-complementary-light);
+        box-shadow: 0em 0em 1em 0.5em var(--background-color-light);
+    }
+
+    .price-info {
+        background-color: var(--background-secondary-dark);
+    }
+
+    .back-image {
+        background-image: url('../data/imgs/beachcomms-tiling-expanded-dark.png');
+    }
+}
+
+input {
+    filter: drop-shadow(0px 5px 2px black);
+    padding: 1em;
+    border-radius: 1em;
+}
+
+input:hover {
+    background-color: rgba(1, 1, 1, 0.5);
+}
+
+h1 {
+    font-size: 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    font-family: "Futura Medium";
+    font-size: 2rem;
+}
+
+p, li {
+    font-family: "Futura Medium";
+    font-size: 1.2rem;
+}
+
+img {
+    border-radius: 1em;
+}
+
+li {
+    margin-top: 1em;
+    padding: 1em;
+}
+
+.back-image {
+    overflow: hidden;
+    width: 500%;
+    height: 500%;
+    scale: 200%;
+    position:fixed;
+    margin-left: -10px;
+    margin-top: -10px;
+    z-index: -1;
+    animation: background-scroll 25s linear infinite;
+}
+
+@keyframes background-scroll {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-256px, -256px, 0);
+    }
+}
+
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 80rem;
+}
+
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.adaptive {
+    width: 100%;
+    height: auto;
+}
+
+.inspect:hover {
+    animation-name: scale-up;
+    animation-duration: 0.3s;
+    scale: 105%;
+    box-shadow: 0px 5px 10px 0px black;
+}
+
+.inspect:not(:hover) {
+    animation-name: scale-small;
+    animation-duration: 0.3s;
+}
+
+.red {
+    color: var(--decline-red);
+}
+
+.green {
+    color: var(--confirmation-green);
+}
+
+.header {
+    position: relative;
+    background-image: url('../data/imgs/beach_banner.png');
+    background-size: cover;
+    padding: 3em;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.header h1 {
+    text-align: center;
+}
+
+.header-text {
+    justify-content: center;
+    gap: 5rem;
+    width: 100%;
+}
+
+.header-image {
+    max-width: 700px;
+}
+
+.socials {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+}
+
+.about-myself {
+    padding-bottom: 1em;
+    padding-top: 1em;
+    text-align: center;
+    box-shadow: 0px 5px 10px 0px black;
+}
+
+.prices {
+    border-radius: 1em;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 2em;
+    gap: 5rem;
+    border: 10px;
+    border-color: var(--background-complementary-light);
+    border-style: solid solid;
+}
+
+.price-info {
+    box-shadow: inset 0px 5px 10px 0px black;
+    max-width: 30rem;
+    border-radius: 1em;
+    padding: 1rem;
+}
+
+.price-info:hover {
+    animation-name: scale-up;
+    animation-duration: 0.3s;
+    scale: 105%;
+    box-shadow: 0px 5px 10px 0px black;
+}
+
+.price-info:not(:hover) {
+    animation-name: scale-small;
+    animation-duration: 0.2s;
+}
+
+.drawings {
+    gap: 1em;
+    justify-content: center;
+}
+
+.drawings img {
+    display: block;
+    max-width:300px;
+    max-height:200px;
+    object-fit: cover;
+    width: auto;
+    height: auto;
+}
+
+.drawings img:hover {
+    animation-name: scale-up;
+    animation-duration: 0.3s;
+    scale: 105%;
+    box-shadow: 0px 5px 10px 0px black;
+}
+
+.drawings img:not(:hover) {
+    animation-name: scale-small;
+    animation-duration: 0.3s;
+}
+
+.comm-process {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.will-draw {
+    margin-top: 1em;
+    padding: 1em;
+    border-style: solid solid;
+    border: -1px;
+    border-color: var(--confirmation-green);
+}
+
+.will-not-draw {
+    margin-top: 1em;
+    padding: 1em;
+    border-style: solid solid;
+    border: -1px;
+    border-color: var(--decline-red);
+}
+
+.will-draw li {
+    margin-top: -1em;
+}
+
+.will-not-draw li {
+    margin-top: -1em;
+}
+
+.comm-process img {
+    max-width: 550px;
+    object-fit: contain;
+}
+
+.comm-process ul {
+    max-width: 30rem;
+}
+
+@keyframes scale-up {
+    from {
+        scale: 100%;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+    to {
+        scale: 105%;
+        box-shadow: 0px 5px 10px 0px black;
+    }
+}
+
+@keyframes scale-small {
+    from {
+        scale: 105%;
+        box-shadow: 0px 5px 10px 0px black;
+    }
+    to {
+        scale: 100%;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+    }
+}
